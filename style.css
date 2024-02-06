@@ -19,6 +19,17 @@ body{
     position: fixed;
     z-index: 1000;
     background-color: white;
+    overflow: hidden;
+}
+#nav-bar .blue-line{
+    position: absolute;
+    bottom: 0;
+    left: 34.5%;
+    height: 3px;
+    width: 9vw;
+    background-color: blue;
+    border-radius: 50px;
+
 }
 .left-container{
     position: relative;
@@ -53,17 +64,18 @@ body{
     width: 55%;
     display: flex;
     /* margin:  25px auto; */
-    left: 4%;
+    left: 2%;
 }
 
 .mid-container .fa-solid{
-    margin: auto 60px;
+    margin: 0 60px;
     font-size: 24px;
     width: 100%;
     text-align: center;
     height: 100%;
     color: gray;
-    margin-top: 20px;
+    padding: 28px 0 0 0;
+    
 
 }
 .right-container{
@@ -98,6 +110,10 @@ body{
     border: 3px solid white;
 
 }
+.mid-container .fa-solid:hover{
+    background-color: rgba(146, 146, 146, 0.329);
+
+}
 /* main */
 main{
     padding-top: 60px;
@@ -105,56 +121,96 @@ main{
     flex-direction: row;
     overflow: hidden;
 }
+/* ------------------------------------------------------------------------ */
+/* left */
 .left{
+    height: 92vh;
     position: relative;
-    width: 15%;
+    width: 23%;
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
     position: fixed;
+    margin-left: 6px;
 }
 .left img{
-    width: 22px;
-    height: auto;
+    width: 30px;
+    height: 30px;
     border-radius: 100px;
-    margin: 10px;
-    margin-top: 20px;
+
 }
-.left i{
-    font-size: 22px;
-    margin:10px;
+.left .shortcuts img{
+    width: 30px;
+    height: 30px;
+    border-radius: 5px !important;
 }
-.aside{
+
+.icon-title, .shortcuts{
     position: relative;
     display: flex;
     flex-direction: row;
     flex-shrink: 0;
-}
-.aside h2{
-    position: relative;
-    margin-top: 22px;
-    font-size: 18px;
-}
-.aside a{
-    text-decoration: none;
-    color: rgb(43, 43, 43);
-}
+    margin-top: 4px;
+    padding: 6px;
 
+}
+.icon-title h2, .shortcuts h2{
+    position: relative;
+    padding:10px 0;
+    font-size: 14px;
+    padding-left: 10px;
+    font-weight: 450;
+}
+.icon-title a, .shortcuts a{
+    text-decoration: none;
+    color: rgb(36, 36, 36);
+}
+.left h1{
+    font-size: 18px;
+    color: gray;
+    margin-top: 8px;
+    margin-left: 5px;
+}
+#last-child{
+    margin-bottom: 40px !important;
+}
+main .left::-webkit-scrollbar{
+    width: 7px;
+}
+main .left::-webkit-scrollbar-thumb{
+    border-radius: 20px;
+    background-color: transparent;
+}
+main .left:hover::-webkit-scrollbar-thumb{
+    background-color: #c5c3c3;
+}
+main .left .icon-title:hover,
+main .left .shortcuts:hover{
+    background-color: #c5c5c5;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    cursor: pointer;
+}
+.left hr{
+    margin:20px 0;
+    width: 18vw;
+    background-color: #e7e7e7;
+}
+/* -------------------------------------------------------------- */
 /* mid */
 
-.mid{
+main .mid{
     width: 45%;
     height: auto;
-    padding: 20px 20px 0 20px;
-    background: #f5f5f5;
-    margin-left: 17%;
+    padding: 20px;
+    margin-left: 24%;
 }
 
 .top-box{
     display: flex;
     flex-direction: row;
     overflow-x: auto;
-    width: 100%;
+    width: 95%;
 }
 .top-box::-webkit-scrollbar{
     display: none;
@@ -162,10 +218,10 @@ main{
 
 .mid .top-box .my-story{
     flex-shrink: 0;
-    width: 155px;
+    width: 140px;
     height: 250px;
     overflow: hidden;
-    margin: 0 0 0 30px;
+    margin: 0 15px 0 0;
     box-shadow: 0 1px 8px rgba(0,0,0,0.2);
     border-radius: 10px;
     cursor: pointer;
@@ -209,10 +265,10 @@ main{
 
 .mid .top-box .other-story{
     flex-shrink: 0;
-    width: 155px;
+    width: 140px;
     height: 250px;
     overflow: hidden;
-    margin: 0 0 0 30px;
+    margin: 0 15px 0 0;
     box-shadow: 0 1px 8px rgba(0,0,0,0.2);
     border-radius: 10px;
     cursor: pointer;
@@ -260,8 +316,548 @@ main{
     color: #fff;
     font-size: 14px;
 }
+.posts-box{
+    position: relative;
+    margin-top: 30px;
+    width: 75%;
+    margin-left: 12%;
+}
 
+.create-post{
+    width: 100%;
+    height: 19vh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgba(22, 22, 22, 0.5);
+}
+.img-text{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+.img-text img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.img-text .input-bar{
+    width: 82%;
+    margin-left: 10px;
+    border-radius: 50px;
+    padding: 7px 10px 7px 15px;
+    border: none;
+    background-color: #e4e4e4;
+    
+}
+::placeholder{
+    color: rgb(17, 17, 17);
+    font-weight: 300;
+}
+.posts-box hr{
+    width: 31.5vw;
+    margin: 0 10px;
+    background-color: #e6e1e1
+}
+.create-post .symbols-live{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-left: 30px;
+}
+.create-post .symbols-live .icon-title{
+    display: flex;
+    flex-direction: row;
+}
+.create-post .symbols-live .icon-title img{
+    width: 24px;
+    height: 18px;
+}
+.create-post .symbols-live .icon-title h2{
+    font-size: 16px;
+    color: rgb(14, 14, 14);
+    font-weight: 300;
+    padding: 0 7px 5px 8px;
+}
+.others-post{
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgba(22, 22, 22, 0.5);
+    margin-top: 13px;
+
+}
+.others-post .others-header{
+    display: flex;
+    flex-direction: row;
+    padding-top: 6px;
+    justify-content: space-between;
+}
+.others-post .others-title{
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+}
+.others-post .others-title img{
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+}
+.others-post h3{
+    font-size: 14px;
+    padding-left: 5px;
+}
+.others-post .upload-time{
+    font-size: 12px;
+    font-weight: 300;
+}
+.others-post .others-title .fa-solid{
+    font-size: 12px;
+}
+.others-post .post-exit{
+    display: flex;
+    flex-direction: row;
+    margin-right: 15px;
+}
+.others-post .post-exit .fa-solid{
+    margin-left:35px;
+    font-size: 22px;
+    color: rgb(204, 204, 204);
+}
+.others-post .caption{
+    margin: 8px 16px 3px;
+}
+.others-post .post-img{
+    height: 60vh;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.others-post .reaction-cmt{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.others-post .reaction-cmt .reactions{
+    display: flex;
+    flex-direction: row;
+    margin: 2px 8px;
+}
+.others-post .reaction-cmt .reactions img{
+    width:18px;
+    height: 18px;
+}
+.others-post .reaction-cmt .cmt{
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+    margin: 2px 8px;
+    color: #2e2e2ec5;
+}
+.others-post .reaction-cmt .cmt p{
+    padding-right: 3px;
+}
+.others-post hr{
+    width: 34.5vw;
+    background-color: #d4d4d4;
+    margin:3px 6px;
+}
+.others-post .like-cmt-share{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 5px;
+}
+.others-post .like-cmt-share .like,
+.others-post .like-cmt-share .comment,
+.others-post .like-cmt-share .share{
+    display: flex;
+    flex-direction: row;
+}
+.others-post .like-cmt-share h2{
+    font-size: 22px;
+    font-weight: 400;
+    color: #a7a7a7;
+    padding: 0 5px 5px 8px;
+}
+.others-post .like-cmt-share .fa-solid,.others-post .like-cmt-share .fa-regular{
+    font-size: 22px;
+    color: #a8a8a8;
+}
+.others-post .comment-section{
+    display: flex;
+    flex-direction: row;
+    margin-left: 7px;
+    margin-top: 5px;
+}
+.others-post .comment-section img{
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+}
+.others-post .commentor{
+    display: flex;
+    flex-direction: column;
+}
+.others-post .commentor-name{
+    width: auto;
+    background-color: #d4d4d4;
+    border-radius: 12px;
+    height: 7vh;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    padding-top: 5px;
+    padding-right: 5px;
+
+}
+.others-post .commentor-name h3{
+    font-size: 16px;
+    font-weight: 500;
+}
+.others-post .commentor-name .txt-cmt{
+    font-size: 14px;
+    font-weight: 400;
+}
+.others-post .like-reply{
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
+}
+.others-post .like-reply p{
+    font-size: 14px;
+    padding-right: 8px;
+
+}
+.others-post .like-reply h4{
+    font-size: 14px;
+    padding-right: 8px;
+}
+.write-comment{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+.write-comment img{
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+}
+.write-comment .input-bar{
+    width: 84%;
+    margin-left: 10px;
+    border-radius: 50px;
+    padding: 7px 9px 9px 15px;
+    border: none;
+    background-color: #e4e4e4;
+    
+}
+.posts-box .add-friend{
+    width: 100%;
+    height: 64vh;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin-top: 13px;
+    box-shadow: 3px 3px 5px rgba(22, 22, 22, 0.5);
+}
+.posts-box .add-friend .add-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+.add-friend .add-title .fa-solid{
+    font-size: 22px;
+}
+.add-friend .multi-cards{
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    margin: 0 3%;
+    height: 325px ;
+}
+.multi-cards::-webkit-scrollbar{
+    display: none;
+}
+.add-friend .new-cards{
+    width: 190px;
+    height: 310px;
+    background-color: white;
+    border-radius: 5px;
+    flex-shrink: 0;
+    overflow: hidden;
+    box-shadow:0 1px 2px rgba(34, 34, 34, 0.699);
+}
+.add-friend .new-cards:nth-child(n+2){
+    margin-left: 10px;
+}
+.add-friend .new-cards:nth-child(1){
+    margin-left: 4px;
+}
+.add-friend .new-cards img{
+    width: 100%;
+    height: 190px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.add-friend .new-cards .cross{
+    position: relative;
+    bottom: 185px;
+    left: 82%;
+    color: rgba(255, 255, 255, 0.685);
+}
+.add-friend .new-cards .fa-x{
+    background-color: rgba(0, 0, 0, 0.479);
+    border-radius: 50%;
+    padding: 8px;
+    
+}
+.add-friend .cross-circle{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: relative;
+    bottom: 20px;
+    background-color: transparent;
+
+}
+.name-friend{
+    position: relative;
+    bottom: 30px;
+}
+.add-friend .new-name{
+    font-size: 18px;
+    font-weight: 400px;
+    padding-left: 8px;
+}
+.add-friend .mutual-friend{
+    display: flex;
+    flex-direction: row;
+    margin: 4px 0 0 6px;
+}
+.add-friend .mutual-friend img{
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+}
+.add-friend .mutual-friend p{
+    font-size: 16px;
+    color: rgba(41, 41, 41, 0.699);
+}
+.add-friend .add-btn{
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: rgba(0, 68, 255, 0.233);
+    color: rgb(0, 60, 255);
+    width: 85%;
+    padding: 10px 8px;
+    margin: 18px 0 0 5px;
+
+}
+.name-friend i{
+    margin-right: 6px;
+}
+.add-friend .see-more{
+    text-align: center;
+    color: rgb(0, 60, 255);
+    font-weight: 450;
+    font-size: 18px;
+    margin-top: 4px;
+}
+
+
+/* ---------------------------------------------------- */
+/* right */
 main .right{
+    width: 25%;
+    height: 92vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    /* background: #850808; */
+    padding: 20px 10px 5px 6px;
+    position: fixed;
+    right: -40px;
+    bottom:-40px;
+    margin-top: 50px;
+}
+
+.right h1{
+    font-size: 18px;
+    color: #9c9c9c;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.right .pages{
+    display: flex;
+    flex-direction: row;
+}
+.right .pages img{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+.right .pages h2{
+    font-size: 15px;
+    padding: 2px 10px 5px 6px;
+    font-weight: 400;
+}
+.right .icons{
+    margin-left: 25px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.right .icons .icon-desc{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+}
+.right .icons .icon-desc i{
+    font-size: 18px;
+    color: rgb(109, 108, 108);
+
+}
+.right .icons .icon-desc h2{
+    font-size: 14px;
+    padding: 0 10px 5px 6px;
+    font-weight: 400;
+    color: #9b9b9b;
+
+}
+.right hr{
+    margin: 5px 0;
+    width: 21.5vw;
+    background-color: #c5c5c5;
+}
+.right .hbd{
+    margin-bottom: 2px;
+}
+.right .birthday{
+    display: flex;
+    flex-direction: row;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 12px 0;
+}
+.right .birthday .gift{
     width: 20%;
-    background-color: red;
+}
+.right .birthday .gift-desc{
+    width: 70%;
+}
+.right .birthday img{
+    width: 24px;
+    height: 24px;
+    margin-top: 2px;
+}
+.right .birthday h2{
+    font-size: 16px;
+    color: rgb(51, 51, 51);
+    font-weight: 400;
+    margin-left: 20px;
+
+
+}
+.right .birthday .tagged{
+    color: black;
+    font-weight: 500;
+}
+
+.right .contacts-heading{
+    display: flex;
+    flex-direction: row;
+}
+.right .contacts-icon{
+    display: flex;
+    flex-direction: row;
+    margin-left: 120px;
+    
+}
+.right .contacts-icon .fa-solid{
+    margin:0 20px;
+    color: #9c9c9c;
+}
+.right .chats{
+    display: flex;
+    flex-direction: column;
+}
+.right .chats .profile-chats{
+    display: flex;
+    flex-direction: row;
+    margin-left: 3px;
+    padding: 10px 0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding-left: 10px;
+}
+.right .chats .profile-chats img{
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+}
+.right .chats .profile-chats h2{
+    font-size: 16px;
+    font-weight: 400;
+    padding: 3px 2px 3px 12px;
+}
+.right .group-marvel{
+    display: flex;
+    flex-direction: column;
+}
+.right .group-marvel .group-chats{
+    display: flex;
+    flex-direction: row;
+    margin-left: 3px;
+    padding: 10px 0;
+}
+.right .group-marvel .group-chats img{
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+}
+.right .group-marvel .group-chats h2{
+    font-size: 16px;
+    font-weight: 400;
+    padding: 3px 2px 3px 12px;
+}
+.right #gurdians{
+    margin-bottom: 50px;
+}
+/* -------------------------------------------------------------------------- */
+/* hover */
+img:hover{
+    cursor: pointer;
+}
+.others-post img:hover,
+.others-post h2:hover,
+.others-post h3:hover,
+i{
+    cursor: pointer;
+}
+.gift-desc .tagged:hover{
+    text-decoration: underline;
+    cursor: pointer;
+
+}
+.profile-chats:hover{
+    background-color: rgba(189, 189, 189, 0.507);
+}
+.right .birthday:hover{
+    background-color:  rgba(189, 189, 189, 0.507);
+}
+.create-post .icon-title:hover{
+    cursor: pointer;
+}
+.name-friend .new-name:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.add-btn:hover{
+    cursor: pointer;
+}
+.see-more:hover{
+    cursor: pointer;
 }
