@@ -537,6 +537,7 @@ main .mid{
     display: flex;
     flex-direction: row;
     padding: 10px;
+    
 }
 .write-comment img{
     width: 26px;
@@ -597,14 +598,14 @@ main .mid{
 }
 .add-friend .new-cards img{
     width: 100%;
-    height: 190px;
+    height: 191px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
 
 .add-friend .new-cards .cross{
     position: relative;
-    bottom: 185px;
+    bottom: 186px;
     left: 82%;
     color: rgba(255, 255, 255, 0.685);
 }
