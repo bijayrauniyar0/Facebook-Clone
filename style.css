@@ -576,7 +576,8 @@ main .mid{
     flex-direction: row;
     overflow-x: auto;
     margin: 0 3%;
-    height: 325px ;
+    
+    height: 324px ;
 }
 .multi-cards::-webkit-scrollbar{
     display: none;
